@@ -1,0 +1,68 @@
+	Feature: Login functionality
+  	As a user I should be able to log into the application with only valid credentials
+  	and should get error message when entered invalid credentials in order to validate login feature.
+
+	Background: Open browser, application and go to the LogIn page
+    	Given A "chrome" browser initialized
+    	And Open application "https://opensource-demo.orangehrmlive.com/index.php/auth/login"
+  
+
+	@smoke
+  	Scenario: As a user with valid username and password I should be able to log into the application
+    	Given I am on login page
+    	When I enter user id as "username" and password as "password"
+    	And Click on Login button
+    	Then I validate that I am able to log into the application
+
+	@smoke2
+ 	Scenario: As a user I should be able to Hover over on Recruitement manue
+	Given I am logged into application 
+	When I click on Recruitment tab
+	Then I am able to see Recruitment page
+
+	@smoke3
+ 	Scenario: As a user I should be able to Hover over on Recruitement manue and Go to Candidates submenue
+	Given I am logged into application 
+	When I click on Recruitment tab
+	And I am able to see Recruitment page
+	When I click on Candidates Tab
+	Then I should be able to see candidates menu
+
+
+	@smoke4
+ 	Scenario: As a user I should be able to Hover over on Recruitement manue and Go to Candidates submenue and Click on add button and add a candidate
+	Given I am logged into application 
+	When I click on Recruitment tab
+	And I am able to see Recruitment page
+	When I click on Candidates Tab
+	Then I should be able to see candidates menu
+	And Click on Add button
+	Then I should land on add candidate section
+	And Fill Candidates Full Name,Email and other required fields
+	And Click on Save Button
+	Then I should be able to save Candidates Form
+
+
+
+	@smoke5
+ 	Scenario: As a user I should be able to Search and validate that the candidate got added into the system
+	Given I am logged into application 
+	When I click on Recruitment tab
+	And I am able to see Recruitment page
+	When I click on Candidates Tab
+	Then I should be able to see candidates menu
+	And Click on Add button
+	Then I should land on add candidate section
+	And Fill Candidates Full Name,Email and other required fields
+	And Click on Save Button
+	Then I should be able to save Candidates Form
+	Then Navigate to candidate page 
+	And Click on Search Button to search saved canndidate data
+	Then I am able to see saved data
+
+
+
+
+
+
+
